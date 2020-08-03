@@ -1,6 +1,10 @@
 import unittest
 '''from 导模块时，必须从根寄出发'''
+import sys
+print(sys.path)
+sys.path.append("../")
 from zk_product.commont.HTMLTestRunner_cn import HTMLTestRunner
+
 '''在路径前面加r，即保持字符原始值的意思。'''
 casePath = r"D:\python-product\zk_product\case"
 rule = "test*.py"
