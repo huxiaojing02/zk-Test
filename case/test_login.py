@@ -11,10 +11,10 @@
 #     @classmethod
 #     def setUpClass(cls) -> None:
 #         cls.driver= webdriver.Chrome()
-#         cls.driver.get("http://localhost:8080/#/login")'''
+#         cls.driver.get("http://121.36.203.32:8082/#/login")'''
 #     def setUp(self) -> None:
 #         self.driver = webdriver.Chrome()
-#         self.driver.get("http://localhost:8080/#/login")
+#         self.driver.get("http://121.36.203.32:8082/#/login")
 #         sleep(3)
 #         self.is_alert_exsit()
 #         '''清除cookies'''

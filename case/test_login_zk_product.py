@@ -11,10 +11,10 @@ class LoginTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.driver= webdriver.Chrome()
-        cls.driver.get("http://localhost:8080/#/login")'''
+        cls.driver.get("http://121.36.203.32:8082/#/login")'''
     def setUp(self) -> None:
         self.driver = webdriver.Chrome()
-        self.driver.get("http://localhost:8080/#/login")
+        self.driver.get("http://121.36.203.32:8082/#/login")
         sleep(3)
         self.is_alert_exsit()
         '''清除cookies'''
@@ -45,7 +45,7 @@ class LoginTest(unittest.TestCase):
         sleep(3)
         user_name = self.get_login_user_name()
         print('测试结果1：%s'%user_name)
-        self.assertTrue(user_name=='胡晓静')
+        self.assertTrue(user_name=='xiaohu')
     def test_02(self):
         '''登录失败'''
         login_location(self.driver,'wangyixuan','123456')
