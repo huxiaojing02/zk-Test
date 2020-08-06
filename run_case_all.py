@@ -17,6 +17,6 @@ fg = open(reportPath,"wb")
 runner = HTMLTestRunner(stream=fg,
                         title="正凯系统登录测试报告",
                         description="测试登录功能",
-                        retry=1)
+                        )
 runner.run(discover)
 fg.close()
