@@ -1,10 +1,13 @@
 from selenium import webdriver
 from time import sleep
+
 '''绝对路径'''
 import unittest
 from zk_product.commont.login_position import login_location
+
 '''相对路径'''
 '''from ..commont.login_position import login_location'''
+
 
 class LoginTest(unittest.TestCase):
     '''
@@ -12,6 +15,7 @@ class LoginTest(unittest.TestCase):
     def setUpClass(cls) -> None:
         cls.driver= webdriver.Chrome()
         cls.driver.get("http://121.36.203.32:8082/#/login")'''
+
     def setUp(self) -> None:
         self.driver = webdriver.Chrome()
         self.driver.get("http://121.36.203.32:8082/#/login")
@@ -26,7 +30,7 @@ class LoginTest(unittest.TestCase):
         '''是否登录成功'''
         try:
             user_name = self.driver.find_element_by_class_name("main-user-name").text
-            return  user_name
+            return user_name
         except:
             return ""
 
@@ -36,22 +40,24 @@ class LoginTest(unittest.TestCase):
             sleep(3)
             alert = self.driver.switch_to.alert
             alert_text = alert.text
-            alert.accept() #关闭alert弹框
-            return  alert_text
+            alert.accept()  # 关闭alert弹框
+            return alert_text
         except:
             return ''
+
     def test_01(self):
-        login_location(self.driver,'xiaohu','123456')
+        login_location(self.driver, 'xiaohu', '123456')
         sleep(3)
         user_name = self.get_login_user_name()
-        print('测试结果1：%s'%user_name)
-        self.assertTrue(user_name=='xiaohu')
+        print('测试结果1：%s' % user_name)
+        self.assertTrue(user_name == 'xiaohu')
+
     def test_02(self):
         '''登录失败'''
-        login_location(self.driver,'wangyixuan','123456')
+        login_location(self.driver, 'wangyixuan', '123456')
         sleep(3)
         user_name = self.get_login_user_name()
-        print('测试结果2：%s'%user_name)
+        print('测试结果2：%s' % user_name)
         self.assertTrue(user_name == '1111')
     # def tearDown(self) -> None:
     #     self.driver.quit()
@@ -59,6 +65,7 @@ class LoginTest(unittest.TestCase):
     # def tearDownClass(cls) -> None:
     #     cls.driver.quit()
 
-#使用框架运行
+
+# 使用框架运行
 if __name__ == "__main__":
     unittest.main()
