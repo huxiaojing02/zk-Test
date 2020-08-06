@@ -50,7 +50,7 @@ class LoginTest(unittest.TestCase):
         sleep(3)
         user_name = self.get_login_user_name()
         print('测试结果1：%s' % user_name)
-        self.assertTrue(user_name == 'xiaohu')
+        self.assertTrue(user_name == 'xiaohu1')
 
     def test_02(self):
         '''登录失败'''
